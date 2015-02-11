@@ -1,0 +1,13 @@
+This will make a busybox docker image and stick it in Docker, then
+delete the temp rootfs.
+
+We grabbed
+https://github.com/docker/docker/blob/master/contrib/mkimage/busybox-static
+under the Apache license to make the temp rootfs, then just roll it in
+to Docker. You can verify it's there with `docker images`.
+
+We call the created image busybox32 because I'm assuming you're
+building this on a 32-bit system. If you're on a 64-bit system, just
+pull the 64-bit image from Docker repositories. It's called busybox.
+
+`sh mkimage_busybox.sh` to run the script and put the image in docker.
